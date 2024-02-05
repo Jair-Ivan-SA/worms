@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('fondo.png');
+    background-size: cover;
+}
+.usuario{
+    text-align: center;
+    font-size:xx-large
+}
+
+
+.recomendacion{
+    text-align: center;
+    font-size: small;
+}
+
+.credenciales{
+    font-size:x-small; 
+}
+
+
+#header {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    height: 50px;
+}
+
+#header img {
+    height: 65px;
+    width: auto;
+    float: left;
+    margin-right: auto;
+}
+
+#login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#forgot-password {
+    text-decoration: underline;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+#login-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#login-button:hover {
+    background-color: white;
+    color: black;
+}
+
+@media screen and (max-width: 600px) {
+    #header img {
+        display: none;
+    }
+}
