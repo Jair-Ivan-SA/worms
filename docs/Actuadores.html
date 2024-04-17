@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Dashboard</title>
+    <link rel="stylesheet" href="stylesInicio.css">
+</head>
+<body>
+    <script>
+        localStorage.setItem('route', 'actuadores')
+        if (!sessionStorage.getItem('isAuthenticated')) {
+          window.location.href = '/login';
+        }
+      </script>      
+    <header>
+        <div class="logo">
+            <img src="Worms.png" alt="Logo">
+        </div>
+        <h1>Bienvenido worm_1</h1>
+        <button id="logout">Cerrar sesión</button>
+    </header>
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="/administrador">Administrador</a></li>
+                <li><a href="/sensores">Sensores</a></li>
+                <li><a href="/registros">Registros</a></li>
+                <li><a href="/actuadores"><b>Actuadores</b></a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section class="sensor-display">
+            <article class="temperature">
+                <div class="actuador">
+                    <img src="ventilador.png" id="ventilador" alt="Ventilador">
+                    <button class="estado" onclick="toggleState(this)">Apagado</button>
+                </div>
+            </article>
+            <article class="humidity">
+                <div class="actuador">
+                    <img src="bomba.png" id="bomba" alt="Sistema de riego">
+                    <button class="estado" onclick="toggleState(this)">Apagado</button>
+                </div>   
+            </article>
+        </section>
+    </main>
+    <script src="login.js"></script>
+</body>
+</html>

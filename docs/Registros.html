@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Dashboard</title>
+    <link rel="stylesheet" href="stylesInicio.css">
+</head>
+<body>
+    <script>
+        localStorage.setItem('route', 'registros')
+        if (!sessionStorage.getItem('isAuthenticated')) {
+          window.location.href = '/login';
+        }
+      </script>      
+    <header>
+        <div class="logo">
+            <img src="Worms.png" alt="Logo">
+        </div>
+        <h1>Bienvenido worm_1</h1>
+        <button onclick="logout()">Cerrar Sesión</button>
+    </header>
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="/administrador">Administrador</a></li>
+                <li><a href="/sensores" >Sensores</a></li>
+                <li><a href="/registros"><b>Registros</b></a></li>
+                <li><a href="/actuadores">Actuadores</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section class="content">
+            <div class="registers">
+                <h2>Registros</h2>
+                <div class="download-options">
+                    <button id="day">Día</button>
+                    <button id="week">Semana</button>
+                    <button id="month">Mes</button>
+                </div>
+                <div class="download-button">
+                    <button id="download-pdf" onclick="downloadPDF()">
+                        <img src="download.png" alt="Download" />
+                        Descargar PDF de Registros
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="login.js"></script>
+</body>
+</html>

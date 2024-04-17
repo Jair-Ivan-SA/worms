@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Dashboard</title>
+    <link rel="stylesheet" href="stylesInicio.css">
+</head>
+<body>
+  <script>
+    localStorage.setItem('route', 'administrador')
+    if (!sessionStorage.getItem('isAuthenticated')) {
+      window.location.href = '/login';
+    }
+  </script>  
+    <header>
+        <div class="logo">
+            <img src="Worms.png" alt="Logo">
+        </div>
+        <h1>Bienvenido worm_1</h1>
+        <button onclick="logout()">Cerrar Sesión</button>
+    </header>
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="/administrador"><b>Administrador</b></a></li>
+                <li><a href="/sensores" >Sensores</a></li>
+                <li><a href="/registros">Registros</a></li>
+                <li><a href="/actuadores">Actuadores</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <div class="admin-panel">
+            <div class="admin-form">
+              <h2>Administrador</h2>
+              <label for="toggle-edit">
+                <input type="checkbox" id="toggle-edit" onchange="toggleInputs()"> Cambiar datos
+              </label>
+              
+              <div id="edit-fields" style="display: none;">
+                <label for="username">NOMBRE DE USUARIO</label>
+                <input type="text" id="username" value="worm_1">
+                
+                <label for="password">CONTRASEÑA</label>
+                <input type="password" id="password" value="********">
+                
+                <label for="confirm-password">CONFIRMAR CONTRASEÑA</label>
+                <input type="password" id="confirm-password" value="********">
+                
+                <button type="submit" id="change-password">Cambiar Contraseña</button>
+              </div>
+              
+              <div id="static-fields">
+                <p><strong>Nombre de Usuario:</strong> worm_1</p>
+              </div>
+            </div>
+            <div class="monitoring-system">
+              <div class="system-status" id="system-status-container" onclick="toggleSystemStatus()">
+                <img src="button.png" alt="Power Icon" id="power-icon">
+                <p id="system-status-text">Encendido</p>
+              </div>
+              <p>Sistema de monitoreo automático</p>
+            </div>            
+          </div>
+    </main>
+    <script src="login.js"></script>
+</body>
+</html>

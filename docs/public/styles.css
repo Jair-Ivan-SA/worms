@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -21,18 +22,20 @@ body {
 }
 
 
-
-
-
-#header {
+header {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
     background-color: #ffffff;
-    color: #fff;
-    padding: 20px;
-    text-align: left;
-    height: 50px;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle profundidad */
 }
 
-#header img {
+header img {
     height: 65px;
     width: auto;
     float: left;
@@ -62,7 +65,7 @@ input[type="password"] {
     display: inline-block;
 }
 
-#login-button {
+button {
     background-color: black;
     color: white;
     border: none;
@@ -73,7 +76,7 @@ input[type="password"] {
     transition: background-color 0.3s, color 0.3s;
 }
 
-#login-button:hover {
+button:hover {
     background-color: white;
     color: black;
 }

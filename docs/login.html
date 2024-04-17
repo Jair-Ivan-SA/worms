@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div id="header">
-        <img src="Worms.png" alt="Logo">
-    </div>
-
+    <script>
+        let route = localStorage.getItem('route');
+        if (sessionStorage.getItem('isAuthenticated')) {
+          window.location.href = ('/' + route);
+        }
+      </script>
+    <header>
+        <div class="logo">
+            <img src="Worms.png" alt="Logo">
+        </div>
+    </header>
     <div id="login-form">
         <p class="usuario">Ingrese su usuario y contraseña</p>
         <p class="recomendacion">Le recomendamos cambiar la contraseña por default</p>
-        <form action="#" method="post" class="credenciales">
+        <form action="/login" method="post" class="credenciales">
             <label for="username" >NOMBRE DE USUARIO:</label><br>
             <input type="text" id="username" name="username"  placeholder="worm_1"><br>
             <label for="password">CONTRASEÑA:</label><br>
             <input type="password" id="password" name="password" placeholder="**********"><br>
             <a href="forget.html" id="forgot-password"class="botonforget">¿Olvidaste tu contraseña?</a><br>
-            <button type="submit" id="login-button" class="boton">Enviar</button>
+            <button type="submit" id="login-button" class="boton" >Enviar</button>
         </form>
+        <p id="login-error-msg" style="color:red;"></p>
     </div>
 </body>
+<script src="login.js"></script>
 </html>

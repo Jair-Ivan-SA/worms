@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Dashboard</title>
+    <link rel="stylesheet" href="stylesInicio.css">
+</head>
+<body>
+    <script>
+        localStorage.setItem('route', 'sensores')
+        if (!sessionStorage.getItem('isAuthenticated')) {
+          window.location.href = '/login';
+        }
+      </script>      
+    <header>
+        <div class="logo">
+            <img src="Worms.png" alt="Logo">
+        </div>
+        <h1>Bienvenido worm_1</h1>
+        <button onclick="logout()">Cerrar Sesión</button>
+    </header>
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="/administrador">Administrador</a></li>
+                <li><a href="/sensores" ><b>Sensores</b></a></li>
+                <li><a href="/registros">Registros</a></li>
+                <li action="/actuadores"><a>Actuadores</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section class="sensor-display">
+            <article class="temperature">
+                <h2>Temperatura</h2>
+                <div class="current-value">20°</div>
+                <!-- Include a graph here, maybe with an img tag or canvas/svg for dynamic data -->
+            </article>
+            <article class="humidity">
+                <h2>Humedad</h2>
+                <div class="current-value">70%</div>
+                <!-- Include a graph here -->
+            </article>
+            <article class="ph">
+                <h2>PH</h2>
+                <div class="current-value">6</div>
+                <!-- Include a graph here -->
+            </article>
+        </section>
+    </main>
+    <script src="login.js"></script>
+</body>
+
+</html>
